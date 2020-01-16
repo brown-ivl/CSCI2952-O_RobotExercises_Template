@@ -7,17 +7,19 @@ from numpy import pi, exp, sqrt
 from skimage import io, img_as_ubyte, img_as_float32
 from skimage.transform import rescale
 
-def my_imfilter(image, filter):
+def my_imfilter(image, kernel):
   """
   Your function should meet the requirements laid out on the project webpage.
-  Apply a filter to an image. Return the filtered image.
+  Apply a filter (using kernel) to an image. Return the filtered image. To
+  achieve acceptable runtimes, you MUST use numpy multiplication and summation
+  when applying the kernel.
   Inputs
   - image: numpy nd-array of dim (m,n) or (m, n, c)
-  - filter: numpy nd-array of dim (k, k)
+  - kernel: numpy nd-array of dim (k, k)
   Returns
   - filtered_image: numpy nd-array of dim of equal 2D size (m,n) or 3D size (m, n, c)
   Errors if:
-  - filter has any even dimension -> raise an Exception with a suitable error message.
+  - filter/kernel has any even dimension -> raise an Exception with a suitable error message.
   """
   filtered_image = np.zeros(image.shape)
 
@@ -32,17 +34,17 @@ def my_imfilter(image, filter):
 """
 EXTRA CREDIT placeholder function
 """
-def my_imfilter_fft(image, filter):
+def my_imfilter_fft(image, kernel):
   """
   Your function should meet the requirements laid out on the project webpage.
-  Apply a filter to an image. Return the filtered image.
+  Apply a filter (using kernel) to an image. Return the filtered image.
   Inputs
   - image: numpy nd-array of dim (m,n) or (m, n, c)
-  - filter: numpy nd-array of dim (k, k)
+  - kernel: numpy nd-array of dim (k, k)
   Returns
   - filtered_image: numpy nd-array of dim of equal 2D size (m,n) or 3D size (m, n, c)
   Errors if:
-  - filter has any even dimension -> raise an Exception with a suitable error message.
+  - filter/kernel has any even dimension -> raise an Exception with a suitable error message.
   """
   filtered_image = np.zeros(image.shape)
 
@@ -100,3 +102,4 @@ def gen_hybrid_image(image1, image2, cutoff_frequency):
   # and all values larger than 1.0 to 1.0.
 
   return low_frequencies, high_frequencies, hybrid_image
+  

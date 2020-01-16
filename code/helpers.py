@@ -25,7 +25,7 @@ def vis_hybrid_image(hybrid_image):
     output = np.hstack((output, np.ones((original_height, padding, num_colors),
                                         dtype=np.float32)))
     # downsample image
-    cur_image = rescale(cur_image, scale_factor, mode='reflect')
+    cur_image = rescale(cur_image, scale_factor, mode='reflect', multichannel=True)
     # pad the top to append to the output
     pad = np.ones((original_height-cur_image.shape[0], cur_image.shape[1],
                    num_colors), dtype=np.float32)
