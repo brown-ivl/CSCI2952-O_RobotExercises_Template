@@ -25,7 +25,7 @@ def my_imfilter(image, kernel):
 
     ##################
     # Your code here #
-    print('my_imfilter function in helpers.py needs to be implemented')
+    print('my_imfilter function in student.py needs to be implemented')
     ##################
 
     return filtered_image
@@ -36,8 +36,8 @@ EXTRA CREDIT placeholder function
 
 def my_imfilter_fft(image, kernel):
     """
-    Your function should meet the requirements laid out on the project webpage.
-    Apply a filter (using kernel) to an image. Return the filtered image.
+    Your function should meet the requirements laid out in the extra credit section on
+    the project webpage. Apply a filter (using kernel) to an image. Return the filtered image.
     Inputs
     - image: numpy nd-array of dim (m,n) or (m, n, c)
     - kernel: numpy nd-array of dim (k, k)
@@ -50,7 +50,7 @@ def my_imfilter_fft(image, kernel):
 
     ##################
     # Your code here #
-    print('my_imfilter_fft function in helpers.py needs to be implemented')
+    print('my_imfilter_fft function in student.py is not implemented')
     ##################
 
     return filtered_image
