@@ -5,9 +5,6 @@
 % This is a LaTeX document. LaTeX is a markup language for producing
 % documents. Your task is to fill out this
 % document, then to compile this into a PDF document.
-% You will then upload this PDF to `Gradescope' - the grading system
-% that we use.
-%
 %
 % TO COMPILE:
 % > pdflatex thisfile.tex
@@ -53,8 +50,10 @@
 \usepackage{fancyhdr}
 \setlength{\headheight}{15pt}
 \usepackage{microtype}
-\usepackage{times}
 \usepackage{booktabs}
+
+% python code format: https://github.com/olivierverdier/python-latex-highlighting
+\usepackage{pythonhighlight}
 
 \frenchspacing
 \setlength{\parindent}{0cm} % Default is 15pt.
@@ -62,56 +61,32 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{Project Writeup}
+\lhead{Project 1 Writeup}
 \rhead{CSCI 1430}
 \rfoot{\thepage}
 
 \date{}
 
-\title{\vspace{-1cm}Project X Writeup}
+\title{\vspace{-1cm}Project 1 Writeup}
 
-\usepackage{listings}
-\usepackage{color}
-
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-
-\lstdefinestyle{mystyle}{
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{magenta},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
-    basicstyle=\footnotesize,
-    breakatwhitespace=false,
-    breaklines=true,
-    captionpos=b,
-    keepspaces=true,
-    numbers=left,
-    numbersep=5pt,
-    showspaces=false,
-    showstringspaces=false,
-    showtabs=false,
-    tabsize=2
-}
-
-\lstset{style=mystyle, language=python, frame=single}
 
 \begin{document}
 \maketitle
-\vspace{-3cm}
+\vspace{-2cm}
 \thispagestyle{fancy}
 
 \section*{Instructions}
 \begin{itemize}
+  \item Provide an overview about how your project functions. 
   \item Describe any interesting decisions you made to write your algorithm.
-  \item Show and discuss the results of your algorithm, and include pictures wherever possible.
+  \item Show and discuss the results of your algorithm.
   \item Feel free to include code snippets, images, and equations.
-  \item Use as many pages as you need, but err on the short side
+  \item List any extra credit implementation and result (optional).
+  \item Use as many pages as you need, but err on the short side.
   \item \textbf{Please make this document anonymous.}
 \end{itemize}
 
-\section*{In the beginning...}
+\section*{Project Overview}
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. See Equation~\ref{eq:one}.
 
@@ -120,20 +95,20 @@ a = b + c
 \label{eq:one}
 \end{equation}
 
-\section*{Interesting Implementation Detail}
+\section*{Implementation Detail}
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 My code snippet highlights an interesting point.
-\begin{lstlisting}
-one = 1
-two = one + one
-if two == 2:
-    print("This computer is not broken.")
+\begin{python}
+one = 1;
+two = one + one;
+if two == 2
+    disp( 'This computer is not broken.' );
+end
+\end{python}
 
-\end{lstlisting}
-
-\section*{A Result}
+\section*{Result}
 
 \begin{enumerate}
     \item Result 1 was a total failure, because...
@@ -164,5 +139,27 @@ My results are summarized in Table~\ref{tab:table1}.
     \caption{Stunning revelation about the efficiency of my code.}
     \label{tab:table1}
 \end{table}
+
+\section*{Extra Credit (Optional)}
+\begin{enumerate}
+   
+    \item Implementation A, code snippets, and results
+        \begin{python}
+        one = 1;
+        two = one + one;
+        if two == 2
+            disp( 'This computer is not broken.' );
+        end
+        \end{python}
+    
+    \item Implementation B, code snippets, and results
+        \begin{python}
+        one = 1;
+        two = one + one;
+        if two == 2
+            disp( 'This computer is not broken.' );
+        end
+        \end{python}
+\end{enumerate}
 
 \end{document}
