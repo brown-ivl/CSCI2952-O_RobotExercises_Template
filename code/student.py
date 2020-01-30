@@ -15,7 +15,7 @@ def my_imfilter(image, kernel):
     when applying the kernel.
     Inputs
     - image: numpy nd-array of dim (m,n) or (m, n, c)
-    - kernel: numpy nd-array of dim (k, k)
+    - kernel: numpy nd-array of dim (k, l)
     Returns
     - filtered_image: numpy nd-array of dim of equal 2D size (m,n) or 3D size (m, n, c)
     Errors if:
@@ -40,7 +40,7 @@ def my_imfilter_fft(image, kernel):
     the project webpage. Apply a filter (using kernel) to an image. Return the filtered image.
     Inputs
     - image: numpy nd-array of dim (m,n) or (m, n, c)
-    - kernel: numpy nd-array of dim (k, k)
+    - kernel: numpy nd-array of dim (k, l)
     Returns
     - filtered_image: numpy nd-array of dim of equal 2D size (m,n) or 3D size (m, n, c)
     Errors if:
