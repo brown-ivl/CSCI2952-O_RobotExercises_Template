@@ -56,6 +56,9 @@
 \setlist[enumerate]{topsep=0pt}
 \usepackage{amsmath}
 
+% a great python code format: https://github.com/olivierverdier/python-latex-highlighting
+\usepackage{pythonhighlight}
+
 \frenchspacing
 \setlength{\parindent}{0cm} % Default is 15pt.
 \setlength{\parskip}{0.3cm plus1mm minus1mm}
@@ -226,9 +229,11 @@ $\square$ & In a high pass filter, the center of the kernel must have the highes
 \paragraph{Q4:} 
 \begin{enumerate}[(a)]
     \item 
-How does computation time vary with filter sizes from $3\times3$ to $15\times15$ (test odd and square sizes, i.e. $3\times3$, $5\times5$, $7\times7$, etc.), and with image sizes from 0.25~MPix to 8~MPix? Choose your own intervals. 
+How does computation time vary with filter sizes from $3\times3$ to $15\times15$ (test odd and square sizes, i.e. $3\times3$, $5\times5$, $7\times7$, etc.), and with image sizes from approximately 0.25 to 8 megapixels. Choose your own intervals.
 
-Measure both using \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.convolve.html}{$scipy.ndimage.convolve$} or \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.correlate.html}{$scipy.ndimage.correlate$} to produce a matrix of values. Use the \href{http://scikit-image.org/docs/dev/auto_examples/transform/plot_rescale.html}{$skimage.transform$} module to vary the size of an image. Use an appropriate charting function to plot your matrix of results, such as \href{https://matplotlib.org/tutorials/toolkits/mplot3d.html#scatter-plots}{$Axes3D.scatter$} or \href{https://matplotlib.org/tutorials/toolkits/mplot3d.html#surface-plots}{$Axes3D.plot\textrm{\_}surface$}.
+\emph{A megapixel is 1,048,576 ($2^20$) pixels (1024$\times$1024), or sometimes also 1,000,000 pixels (especially if you manufacture cameras). Megapixels is often shortened to MP or MPix.}
+
+Measure both using \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.convolve.html}{$scipy.ndimage.convolve$} or \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.correlate.html}{$scipy.ndimage.correlate$} to produce a set of values. Use the \href{http://scikit-image.org/docs/dev/auto_examples/transform/plot_rescale.html}{$skimage.transform$} module to vary the size of an image. Use an appropriate charting function to plot your matrix of results, e.g., by plotting multiple lines on a graph using \href{https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html}{$Plot$}, with one for each kernel size.
 
 \emph{Image:} \href{RISDance.jpg}{RISDance.jpg} (in the .tex directory).
 
