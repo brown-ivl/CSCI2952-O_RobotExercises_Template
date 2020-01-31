@@ -149,13 +149,10 @@
 
 % Please leave the pagebreak
 \pagebreak
-\paragraph{Q3:} A hybrid image is created by applying a high pass filter on one image, a low pass filter on another image, and then summing the two images together. For questions (a) through (c), fill in the box for whether the kernel corresponds to a high pass filter, a low pass filter, or neither. For questions (d) and (e), the images are outputs of a filtering operation with high pass or low pass filters. Fill in the box indicating what kernel was used for the result. 
+\paragraph{Q3:} We create hybrid images by high pass filtering one image, low pass filtering another image, and summing the two images. For (a--c), which filter does the kernel represent? For (d--e), which filter produced the output images?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \emph{LaTeX:} To fill in boxes, replace `\textbackslash square' with `\textbackslash blacksquare' for your answer.
-
-\vspace{5mm}
-
 
 \begin{enumerate}[(a)]
 \item
@@ -194,7 +191,10 @@ $\square$ & Low pass \\
 $\square$ & Neither \\
 \end{tabular}
 
-\item 
+\item
+Input image:\\
+\raisebox{\baselineskip-\height}{\includegraphics[width = 6cm]{q3img0.png}} \\
+Output image 1:\\
 \raisebox{\baselineskip-\height}{\includegraphics[width = 6cm]{q3img1.png}}
 \begin{tabular}[h]{lc}
 $\square$ & High pass \\
@@ -202,6 +202,7 @@ $\square$ & Low pass \\
 \end{tabular}
 
 \item
+Output image 2:\\
 \raisebox{\baselineskip-\height}{\includegraphics[width = 6cm]{q3img2.png}}
 \begin{tabular}[h]{lc}
 $\square$ & High pass \\
@@ -233,7 +234,7 @@ How does computation time vary with filter sizes from $3\times3$ to $15\times15$
 
 \emph{A megapixel is 1,048,576 ($2^20$) pixels (1024$\times$1024), or sometimes also 1,000,000 pixels (especially if you manufacture cameras). Megapixels is often shortened to MP or MPix.}
 
-Measure both using \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.convolve.html}{$scipy.ndimage.convolve$} or \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.correlate.html}{$scipy.ndimage.correlate$} to produce a set of values. Use the \href{http://scikit-image.org/docs/dev/auto_examples/transform/plot_rescale.html}{$skimage.transform$} module to vary the size of an image. Use an appropriate charting function to plot your matrix of results, e.g., by plotting multiple lines on a graph using \href{https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html}{$Plot$}, with one for each kernel size.
+Measure both using \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.convolve.html}{$scipy.ndimage.convolve$} or \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.correlate.html}{$scipy.ndimage.correlate$} to produce a set of values. Use the \href{http://scikit-image.org/docs/dev/auto_examples/transform/plot_rescale.html}{$skimage.transform$} module with its {$rescale$} function to vary the size of an image. Use an appropriate charting function to plot your matrix of results, e.g., by plotting multiple lines on a graph using \href{https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html}{$Plot$}, with one for each kernel size.
 
 \emph{Image:} \href{RISDance.jpg}{RISDance.jpg} (in the .tex directory).
 
