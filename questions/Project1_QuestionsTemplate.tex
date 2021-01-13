@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% CSCI 1430 Written Question Template
+% CSCI 1430 Written Questions
 %
 % This is a LaTeX document. LaTeX is a markup language for producing documents.
 % Your task is to answer the questions by filling out this document, then to
@@ -42,7 +42,7 @@
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
-
+\usepackage{xcolor}
 \usepackage[colorlinks = true,
             linkcolor = blue,
             urlcolor  = blue]{hyperref}
@@ -71,7 +71,7 @@
 
 \date{}
 
-\title{\vspace{-1cm}Project 1 Questions}
+\title{\vspace{-1cm}Project 1 Written Questions Solutions}
 
 
 \begin{document}
@@ -81,7 +81,7 @@
 
 \section*{Instructions}
 \begin{itemize}
-  \item 5 questions.
+  \item 6 questions.
   \item Include code, images, and equations where appropriate.
   \item Please make this document anonymous.
   \item When you are finished, compile this document to a PDF and submit it directly to Gradescope. On upload, \textbf{Gradescope will ask you to assign question numbers to your pages}. Making each question end with a page break after your answer is a good way to ease this process.
@@ -110,7 +110,7 @@
 % \item 
 % \begin{enumerate}[(i)]
 %     \item 
-%     \item
+%     \item 
 %     \item 
 % \end{enumerate}
 % \item 
@@ -147,7 +147,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Please leave the pagebreak
+% Please leave the page break
 \pagebreak
 \paragraph{Q3:} We create hybrid images by high pass filtering one image, low pass filtering another image, and summing the two images. For (a--c), which filter does the kernel represent? For (d--e), which filter produced the output images?
 
@@ -230,13 +230,95 @@ $\square$ & In a high pass filter, the center of the kernel must have the highes
 \paragraph{Q4:} 
 \begin{enumerate}[(a)]
     \item 
-How does computation time vary with filter sizes from $3\times3$ to $15\times15$ (test odd and square sizes, i.e. $3\times3$, $5\times5$, $7\times7$, etc.), and with image sizes from approximately 0.25 to 8 megapixels. Choose your own intervals.
+    How does computation time vary with filter sizes from $3\times3$ to $15\times15$ (test odd and square sizes, i.e. $3\times3$, $5\times5$, $7\times7$, etc.), and with image sizes from approximately 0.25 to 8 megapixels? To find out fill out the below stencil to graph, for each of the above filter sizes, the correlation between an image size (x-axis) and time to convolve/correlate (y-axis) that image– each filter size should be its own line in the multi-line plot. 
+    
+    The stencil code imports the libraries you will need, but to understand how to use them you must look at the documentation.
+    \begin{itemize}
+    \item convolve/correlate - \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.convolve.html}{$scipy.ndimage.convolve$} or \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.correlate.html}{$scipy.ndimage.correlate$}
+    \item rescale - \href{https://scikit-image.org/docs/dev/api/skimage.transform.html#skimage.transform.rescale}{$skimage.transform.rescale$}
+    \item resize - \href{https://scikit-image.org/docs/dev/api/skimage.transform.html#skimage.transform.resize}{$skimage.transform.resize$}
+    \item rescale vs resize (and an example) \href{http://scikit-image.org/docs/dev/auto_examples/transform/plot_rescale.html}{here}
+    \end{itemize} 
 
-\emph{A megapixel is 1,048,576 ($2^20$) pixels (1024$\times$1024), or sometimes also 1,000,000 pixels (especially if you manufacture cameras). Megapixels is often shortened to MP or MPix.}
+    
+    Add your graph as well as a brief description of what your graph demonstrates, below.
 
-Measure both using \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.convolve.html}{$scipy.ndimage.convolve$} or \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.correlate.html}{$scipy.ndimage.correlate$} to produce a set of values. Use the \href{http://scikit-image.org/docs/dev/auto_examples/transform/plot_rescale.html}{$skimage.transform$} module with its {$rescale$} function to vary the size of an image. Use an appropriate charting function to plot your matrix of results, e.g., by plotting multiple lines on a graph using \href{https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html}{$Plot$}, with one for each kernel size.
+\emph{Note A megapixel is 1,048,576 ($2^20$) pixels (1024$\times$1024), or sometimes also 1,000,000 pixels (especially if you manufacture cameras). Megapixels is often shortened to MP or MPix.}
 
 \emph{Image:} \href{RISDance.jpg}{RISDance.jpg} (in the .tex directory).
+
+\begin{python}
+import time 
+import matplotlib.pyplot as plt
+from skimage import io, img_as_float32
+#use to rescale+resize image
+from skimage.transform import rescale, resize
+#use to convolve/correlate image
+from scipy.ndimage import correlate
+
+#This reads in image and converts to a floating point format
+# 1) TODO - replace PATH with the actual path to the 
+#    downloaded RISDance.jpg image linked above
+image = img_as_float32(io.imread('PATH'))
+
+# 2) TODO - change the image size so it starts at 8MPix 
+#    use one of the imported libraries
+original_image = 
+
+# 3) TODO - iterate through odd numbers from 3 to 15
+#   (inclusive!!) these will represent your filter sizes
+#   (3x3,5x5,7x7, etc.), for each filter size you will...
+for kernel_size in range():
+
+    #because for each loop you are resizing your image, you 
+    #want to start each loop w/the original image size
+    shrinking_image = original_image 
+    
+    #these lists will hold the values you plot
+    image_sizes = [] #x axis
+    times = [] #y axis
+
+    #while image size is bigger than .25MPx
+    while(shrinking_image.size > 250000):
+    
+    	# 4) TODO - create your kernel. Your kernel can hold
+    	#    any values, as the kernel values shouldn't 
+    	#    affect computation time. The size of the kernel
+    	#    must be kernel_size x kernel_size
+        kernel = 
+        
+        #5) TODO - reduce your image size. You can choose by 
+        # what increments to reduce your image.
+        shrinking_image = 
+        
+        #gets the current time (in seconds)
+        start = time.time() 
+        
+        # 6) TODO - use one of the imported libraries to do 
+        # your correlation/convolution on the image. You can 
+        # choose which operation to perform.
+        
+        
+        #gets the current time (in seconds)
+        end = time.time() 
+        
+        #7) TODO - figure out what values to append, and 
+        #   append them here
+        image_sizes.append()
+        times.append()
+    
+    #each filter size will be plotted as a separate line, in 
+    #a multi-line 2-dimensional graph
+    plt.plot(times, image_sizes, label=str(kernel.size))
+
+#plot
+plt.axes().set_xlabel('image size (pixels)')
+plt.axes().set_ylabel('operation time (seconds)')
+plt.legend(title="filter sizes (pixels)")
+plt.show()
+
+\end{python}
+
 
 \item
     Do the results match your expectation given the number of multiply and add operations in convolution?
@@ -255,8 +337,45 @@ Measure both using \href{https://docs.scipy.org/doc/scipy/reference/generated/sc
 % \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak 
+\paragraph{Q5:} The upcoming coding assignment requires the extensive use of the library numpy, which handles computation with large, multi-dimensional arrays and matrices. Here are some small exercises on basic numpy operations to get you started! Write \emph{one} numpy function to complete each of the following tasks.
+
+Note that numpy is usually imported as
+\begin{verbatim}
+    import numpy as np
+\end{verbatim}
+at the top of the code file. You can then call numpy functions with \begin{verbatim}
+    np.function_name()
+\end{verbatim}
+You are encouraged to test out your answers by creating your own python program, importing numpy and calling and printing the results of your solutions!
+
+\begin{enumerate}[a.]
+    \item Create an array of shape (320,640) filled with zeros.
+    \item Given a variable called \emph{img} of shape (1, 1, 320, 640), create a new 2D array variable of shape (320, 640) from \emph{img}, i.e. remove all the 1-sized dimensions. 
+    \item Conversely, say you have an array variable \emph{img} of shape (320, 640), create a new 2D array variable of shape (1, 320, 640) from \emph{img}, i.e. add a dimension. 
+    \item Pad an \textbf{RGB} (remember, this means the image has 3 channels) image array, \emph{img}, with two zeros on either side of each row and 3 zeros values on either side of each column. Don't add zeros to the front or back (the color channel dimension).
+    \item Clip the image array, \emph{img}, so all its values lie within the range [-0.5, 0.5].
+    \item With an RGB-image array, \emph{img}, of shape (320, 640, 3), retrieve the blue channel of the image while preserving all of \emph{img}'s dimensions and values. 
+    \item With an RGB-image array, \emph{img}, of shape (320, 640, 3), retrieve the red and blue channels of the image. 
+\end{enumerate}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{A5:} Your answer here
+%  Uncomment the stencil below and fill in your solution.
+
+% \begin{enumerate}[(a)]
+% \item 
+% \item 
+% \item 
+% \item 
+% \item 
+% \item 
+% \item 
+% \end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Please leave the pagebreak
 \pagebreak
 \paragraph{Q5:} 
@@ -278,37 +397,28 @@ illustrations than as reportage, since they can no longer distinguish between a 
     \item Include an cited example of a manipulated news picture, and identify the manipulation. What was the intent and impact of the manipulation? (2--4 sentences)
 \end{enumerate}
 
-\emph{Note:} There are open questions. We will grade for thought and justification. 
+\emph{Note:} These are open questions. We will grade for thought and justification. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{A5:} Your answer here.
-% Uncomment the stencil below and fill in your solution.
 
+ \paragraph{A6:} Your answer here
+%  Uncomment the stencil below and fill in your solution.
 % \begin{enumerate}[(a)]
-
+% \item
 % \item 
-
 % \item 
-% \item Answer here. 
 % \begin{enumerate}[(i)]
-%     \item Answer here.
+%     \item
+% \end{enumerate}
+% \item
 % \end{enumerate}
 
-% \item 
-
-% \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\pagebreak
-\paragraph{A5:} Continued; extra space as needed.
-
-
+%% any suggestions for more? 
 \pagebreak
 \section*{Feedback? (Optional)}
 Please help us make the course better. If you have any feedback for this assignment, we'd love to hear it!
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \end{document}
