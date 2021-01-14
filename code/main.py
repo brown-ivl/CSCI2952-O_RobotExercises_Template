@@ -15,8 +15,8 @@ def main():
         paths separated by a comma (no spaces)
 
         e.g.
-        python3 main.py -p filter ../data/dog.bmp
-        python3 main.py -p hybrid ../data/cat.bmp,../data/dog.bmp
+        python3 main.py -t filter ../data/dog.bmp
+        python3 main.py -t hybrid ../data/cat.bmp,../data/dog.bmp
 
         """
 
@@ -40,7 +40,7 @@ def main():
             # if no comma used, user input path wrong
             else:
                 print('The file path you specified: ' + args.img + ' does not exist. Try running something like: '
-                                                                   '\n python3 main.py -p filter -i ../data/dog.bmp')
+                                                                   '\n python3 main.py -t filter -i ../data/dog.bmp')
         # if path does exist, run filter tests
         else:
             print('running filter tests on image ' + args.img)
@@ -62,7 +62,7 @@ def main():
     # user didn't specify whether testing filtering or hybrid image generation
     else:
         print("You must specify what you are testing (either 'filter' or 'hybrid')"
-              " for e.g. try running: \n python3 main.py -p filter -i ../data/dog.bmp")
+              " for e.g. try running: \n python3 main.py -t filter -i ../data/dog.bmp")
 
 
 if __name__ == '__main__':
