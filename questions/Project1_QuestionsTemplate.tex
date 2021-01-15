@@ -240,7 +240,7 @@ $\square$ & In a high pass filter, the center of the kernel must have the highes
     \item convolve/correlate - \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.convolve.html}{$scipy.ndimage.convolve$} or \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.correlate.html}{$scipy.ndimage.correlate$}
     \item rescale - \href{https://scikit-image.org/docs/dev/api/skimage.transform.html#skimage.transform.rescale}{$skimage.transform.rescale$}
     \item resize - \href{https://scikit-image.org/docs/dev/api/skimage.transform.html#skimage.transform.resize}{$skimage.transform.resize$}
-    \item rescale vs resize (and an example) \href{http://scikit-image.org/docs/dev/auto_examples/transform/plot_rescale.html}{here}
+    \item rescale vs resize – an example \href{http://scikit-image.org/docs/dev/auto_examples/transform/plot_rescale.html}{here}
     \end{itemize} 
 
     
@@ -312,11 +312,11 @@ for kernel_size in range():
     
     #each filter size will be plotted as a separate line, in 
     #a multi-line 2-dimensional graph
-    plt.plot(times, image_sizes, label=str(kernel.size))
+    plt.plot(image_sizes, times, label=str(kernel.size))
 
 #plot
-plt.axes().set_xlabel('image size (pixels)')
-plt.axes().set_ylabel('operation time (seconds)')
+plt.xlabel('image size (pixels)')
+plt.ylabel('operation time (seconds)')
 plt.legend(title="filter sizes (pixels)")
 plt.show()
 
