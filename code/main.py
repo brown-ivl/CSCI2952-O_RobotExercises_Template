@@ -8,47 +8,54 @@ def main():
         To test your program you can run the tests we created– 'filter' and 'hybrid'. To run each test, you must add the corresponding
         flags (outlined below) to specify which test you are running, and the image paths you are running the tests on
 
-        Command line usage: python3 main.py -t | --test <filter or hybrid> -i | --img <image path(s) separated by comma (no spaces)>
+        Command line usage: python3 main.py -t | --test <filter or hybrid> -i | --image <image path(s) separated by comma (no spaces)>
 
-        -t | --test - flag - required. specifies which test to run (filter - image filtering or hybrid – hybrid image generation)
-        -i | --img - flag - required. specifies which image to filter or images to create a hybrid. If running hybrid should be two image
+        -t | --task - flag - required. specifies which test to run (filter - image filtering or hybrid – hybrid image generation)
+        -i | --image - flag - required. specifies which image to filter or images to create a hybrid. If running hybrid should be two image
         paths separated by a comma (no spaces)
 
         e.g.
-        python3 main.py -t filter ../data/dog.bmp
-        python3 main.py -t hybrid ../data/cat.bmp,../data/dog.bmp
+        python3 main.py -t filter -i ../data/dog.bmp
+        python3 main.py -t hybrid -i ../data/cat.bmp,../data/dog.bmp
 
         """
 
     # create the command line parser
     parser = argparse.ArgumentParser()
-    parser.add_argument("-t", "--test", required=True, help="Either 'filter' to run image filtering or 'hybrid' to run "
-                                                            "(hybrid image generation)")
-    parser.add_argument("-i", "--img", required=True, help="Paths to image(s). If running hybrid images separate "
-                                                           "paths by a comma (no space)")
+    parser.add_argument("-t", "--task",
+                        required=True,
+                        choices=['filter','hybrid'],
+                        help="Either 'filter' to run image "
+                             "filtering or 'hybrid' to run "
+                             "hybrid image generation")
+    parser.add_argument("-i", "--image",
+                        required=True,
+                        help="Paths to image(s). If running "
+                             "hybrid images separate "
+                             "paths by a comma (no space)")
     args = parser.parse_args()
 
     # if testing filtering (part 1)
-    if args.test == 'filter':
+    if args.task == 'filter':
         # if specified path does not exist
-        if not os.path.exists(args.img):
+        if not os.path.exists(args.image):
             # if used a comma in the file path, user may have
             # tried to run hybrid, remind user they are running filtering
-            if (',' in args.img):
+            if (',' in args.image):
                 print('You wrote a file path separated by a comma. You only need to specify '
                       'one file path if you are testing filtering.')
             # if no comma used, user input path wrong
             else:
-                print('The file path you specified: ' + args.img + ' does not exist. Try running something like: '
+                print('The file path you specified: ' + args.image + ' does not exist. Try running something like: '
                                                                    '\n python3 main.py -t filter -i ../data/dog.bmp')
         # if path does exist, run filter tests
         else:
-            print('running filter tests on image ' + args.img)
-            filter(args.img)
+            print('running filter tests on image ' + args.image)
+            filter(args.image)
 
     # if testing hybrid (part 2)
-    elif args.test == 'hybrid':
-        img1, img2 = args.img.split(',')
+    elif args.task == 'hybrid':
+        img1, img2 = args.image.split(',')
         # check if either of specified image paths don't exist
         if not os.path.exists(img1):
             print('The file path you specified for image 1 does not exist')
