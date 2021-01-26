@@ -47,7 +47,7 @@ def save_image(path, im):
 
 # given two differently sized images, resize them so they have the same shape
 def equalize_image_sizes(im_one, im_two):
-    assert (im_one.shape[2] != im_two.shape[2], 'the third dimension of these images do not match')
+    assert im_one.shape[2] == im_two.shape[2], 'the third dimension of these images do not match'
     # resizes by adding/subtracting half of the difference between the image's width and height
     x_resize = (im_one.shape[0] - im_two.shape[0]) / 2
     y_resize = (im_one.shape[1] - im_two.shape[1]) / 2
