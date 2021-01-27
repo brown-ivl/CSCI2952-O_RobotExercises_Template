@@ -1,6 +1,6 @@
 import argparse
 import os
-from proj1_part1 import filter
+from proj1_part1 import filter_test
 from proj1_part2 import hybrid_img_generation
 
 def main():
@@ -51,7 +51,7 @@ def main():
         # if path does exist, run filter tests
         else:
             print('running filter tests on image ' + args.image)
-            filter(args.image)
+            filter_test(args.image)
 
     # if testing hybrid (part 2)
     elif args.task == 'hybrid':

@@ -10,7 +10,11 @@ import matplotlib.pyplot as plt
 from helpers import load_image, save_image
 from student import my_imfilter
 
-def filter(img_path):
+"""
+This function loads an image, and then attempts to filter that image
+using different kernels as a testing routine.
+"""
+def filter_test(img_path):
     resultsDir = '..' + os.sep + 'results'
     if not os.path.exists(resultsDir):
         os.mkdir(resultsDir)
