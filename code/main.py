@@ -5,18 +5,18 @@ from proj1_part2 import hybrid_img_generation
 
 def main():
     """
-        To test your program you can run the tests we created– 'filter' and 'hybrid'. To run each test, you must add the corresponding
-        flags (outlined below) to specify which test you are running, and the image paths you are running the tests on
+    To test your program you can run the tests we created - "filter" and "hybrid". To run each test, you must add the corresponding
+    flags (outlined below) to specify which test you are running, and the image paths you are running the tests on
 
-        Command line usage: python3 main.py -t | --test <filter or hybrid> -i | --image <image path(s) separated by comma (no spaces)>
+    Command line usage: python3 main.py -t | --test <filter or hybrid> -i | --image <image path(s) separated by comma (no spaces)>
 
-        -t | --task - flag - required. specifies which test to run (filter - image filtering or hybrid – hybrid image generation)
-        -i | --image - flag - required. specifies which image to filter or images to create a hybrid. If running hybrid should be two image
-        paths separated by a comma (no spaces)
+    -t | --task - flag - required. specifies which test to run (filter - image filtering or hybrid - hybrid image generation)
+    -i | --image - flag - required. specifies which image to filter or images to create a hybrid. If running hybrid should be two image
+    paths separated by a comma (no spaces)
 
-        e.g.
-        python3 main.py -t filter -i ../data/dog.bmp
-        python3 main.py -t hybrid -i ../data/cat.bmp,../data/dog.bmp
+    e.g.
+    python3 main.py -t filter -i ../data/dog.bmp
+    python3 main.py -t hybrid -i ../data/cat.bmp,../data/dog.bmp
 
         """
 
