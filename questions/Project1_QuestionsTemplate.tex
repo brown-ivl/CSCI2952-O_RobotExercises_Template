@@ -67,7 +67,26 @@
 \fancyhf{}
 \lhead{Project 1 Questions}
 \rhead{CSCI 1430}
-\rfoot{\thepage}
+\lfoot{\textcolor{red}{Only 
+\ifcase\thepage
+\or instructions and Q1
+\or A1
+\or A2
+\or A3
+\or A3
+\or Q4
+\or Q4
+\or A4
+\or Q5
+\or A5
+\or A6
+\or feedback
+\else
+EXTRA PAGE ADDED
+\fi
+should be on this page
+}}
+\rfoot{\thepage/12}
 
 \date{}
 
