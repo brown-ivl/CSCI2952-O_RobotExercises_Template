@@ -10,7 +10,7 @@ from helpers import vis_hybrid_image, load_image, save_image, equalize_image_siz
 from student import my_imfilter, gen_hybrid_image
 
 # Before trying to construct hybrid images, it is suggested that you
-# implement my_imfilter in helpers.py and then debug it using proj1_part1.py
+# implement my_imfilter in student.py and then debug it using proj1_part1.py
 
 # Debugging tip: You can split your python code and print in between
 # to check if the current states of variables are expected.
