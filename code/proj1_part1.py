@@ -82,7 +82,7 @@ def filter_test(img_path):
 
     # 0.5 added because the output image is centered around zero otherwise and mostly black
     sobel_image = np.clip(sobel_image+0.5, 0.0, 1.0)
-    plt.imshow(sobel_image, cmap='gray'))
+    plt.imshow(sobel_image, cmap='gray')
     plt.show()
     done = save_image(resultsDir + os.sep + 'sobel_image.jpg', sobel_image)
 
@@ -97,7 +97,7 @@ def filter_test(img_path):
     # added because the output image is centered around zero otherwise and mostly black
     laplacian_image = np.clip(laplacian_image+0.5, 0.0, 1.0)
     plt.figure()
-    plt.imshow(laplacian_image, cmap='gray'))
+    plt.imshow(laplacian_image, cmap='gray')
     plt.show()
     done = save_image(resultsDir + os.sep + 'laplacian_image.jpg', laplacian_image)
 
