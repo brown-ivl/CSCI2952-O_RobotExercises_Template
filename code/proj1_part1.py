@@ -29,7 +29,7 @@ def filter_test(img_path):
     identity_filter = np.asarray(
         [[0, 0, 0], [0, 1, 0], [0, 0, 0]], dtype=np.float32)
     identity_image = my_imfilter(test_image, identity_filter)
-    plt.imshow(identity_image)
+    plt.imshow(identity_image, cmap='gray')
     plt.show()
     done = save_image('../results/identity_image.jpg', identity_image)
 
@@ -42,7 +42,7 @@ def filter_test(img_path):
     # making the filter sum to 1
     blur_filter /= np.sum(blur_filter, dtype=np.float32)
     blur_image = my_imfilter(test_image, blur_filter)
-    plt.imshow(blur_image)
+    plt.imshow(blur_image,cmap='gray')
     plt.show()
     done = save_image(resultsDir + os.sep + 'blur_image.jpg', blur_image)
 
@@ -59,7 +59,7 @@ def filter_test(img_path):
     large_blur_image = my_imfilter(test_image, large_1d_blur_filter)
     # notice the T operator which transposes the filter
     large_blur_image = my_imfilter(large_blur_image, large_1d_blur_filter.T)
-    plt.imshow(large_blur_image)
+    plt.imshow(large_blur_image, cmap='gray')
     plt.show()
     done = save_image(resultsDir + os.sep +
                       'large_blur_image.jpg', large_blur_image)
@@ -82,7 +82,7 @@ def filter_test(img_path):
 
     # 0.5 added because the output image is centered around zero otherwise and mostly black
     sobel_image = np.clip(sobel_image+0.5, 0.0, 1.0)
-    plt.imshow(sobel_image)
+    plt.imshow(sobel_image, cmap='gray'))
     plt.show()
     done = save_image(resultsDir + os.sep + 'sobel_image.jpg', sobel_image)
 
@@ -97,7 +97,7 @@ def filter_test(img_path):
     # added because the output image is centered around zero otherwise and mostly black
     laplacian_image = np.clip(laplacian_image+0.5, 0.0, 1.0)
     plt.figure()
-    plt.imshow(laplacian_image)
+    plt.imshow(laplacian_image, cmap='gray'))
     plt.show()
     done = save_image(resultsDir + os.sep + 'laplacian_image.jpg', laplacian_image)
 
@@ -105,6 +105,6 @@ def filter_test(img_path):
     high_pass_image = test_image - blur_image
     high_pass_image = np.clip(high_pass_image+0.5, 0.0, 1.0)
     plt.figure()
-    plt.imshow(high_pass_image)
+    plt.imshow(high_pass_image, cmap='gray')
     plt.show()
     done = save_image(resultsDir + os.sep + 'high_pass_image.jpg', high_pass_image)
