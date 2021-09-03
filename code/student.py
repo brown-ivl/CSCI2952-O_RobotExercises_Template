@@ -94,11 +94,4 @@ def gen_hybrid_image(image1, image2, cutoff_frequency):
     # Your code here #
     hybrid_image = np.zeros(image1.shape) # Replace with your implementation
 
-    # (4) At this point, you need to be aware that values larger than 1.0
-    # or less than 0.0 may cause issues in the functions in Python for saving
-    # images to disk. These are called in proj1_part2 after the call to 
-    # gen_hybrid_image().
-    # One option is to clip (also called clamp) all values below 0.0 to 0.0, 
-    # and all values larger than 1.0 to 1.0.
-
     return low_frequencies, high_frequencies, hybrid_image
