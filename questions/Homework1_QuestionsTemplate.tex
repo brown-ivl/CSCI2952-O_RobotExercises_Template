@@ -65,7 +65,7 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{Homework 1 Questions}
+\lhead{Project 1 Questions}
 \rhead{CSCI 1430}
 \lfoot{\textcolor{red}{Only 
 \ifcase\thepage
@@ -91,7 +91,7 @@ should be on this page
 
 \date{}
 
-\title{\vspace{-1cm} Homework 1 Written Questions Solutions}
+\title{\vspace{-1cm}Homework 1 Written Questions}
 
 
 \begin{document}
@@ -114,13 +114,13 @@ should be on this page
 \paragraph{Q1:} Image convolution, a type of image filtering, is a fundamental image processing tool that you will use repeatedly throughout the course.
 
 \begin{enumerate}[(a)]
-\item \emph{Explicitly describe} the 3 main components of image convolution:
+\item \emph{Explicitly describe} the 3 main components of image convolution: (5-10 sentences)
 \begin{enumerate}[(i)]
     \item input
     \item transformation (how it happens)
     \item output
 \end{enumerate}
-\item Why is image convolution important in Computer Vision? Which applications does it allow?
+\item Why is image convolution important in Computer Vision? Which applications does it allow? (5-10 sentences)
 \end{enumerate}
 
 
@@ -146,10 +146,10 @@ should be on this page
 \paragraph{Q2:} Correlation and convolution are both filtering operations we can perform to extract information from images.
 \begin{enumerate}[(a)]
     \item 
-    What is the difference between convolution and correlation?
+    What is the difference between convolution and correlation? (3-5 sentences)
 
     \item
-    Construct a scenario which produces a different output between both operations. Include the kernel you used and your image results. Use your understanding of convolution and correlation to explain the outputs.
+    Construct a scenario which produces a different output between both operations. Include the kernel you used and your image results. Use your understanding of convolution and correlation to explain the outputs. (5-10 sentences)
     
     \emph{Please use \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.convolve.html}{$scipy.ndimage.convolve$} and \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.correlate.html}{$scipy.ndimage.correlate$} to experiment!}
     
@@ -217,9 +217,9 @@ $\square$ & Neither \\
 
 \item
 Input image:\\
-\raisebox{\baselineskip-\height}{\includegraphics[width = 6cm]{q3img0.png}} \\
+\raisebox{\baselineskip-\height}{\includegraphics[width = 6cm]{images/q3img0.png}} \\
 Output image 1:\\
-\raisebox{\baselineskip-\height}{\includegraphics[width = 6cm]{q3img1.png}}
+\raisebox{\baselineskip-\height}{\includegraphics[width = 6cm]{images/q3img1.png}}
 \begin{tabular}[h]{lc}
 $\square$ & High pass \\
 $\square$ & Low pass \\
@@ -227,7 +227,7 @@ $\square$ & Low pass \\
 
 \item
 Output image 2:\\
-\raisebox{\baselineskip-\height}{\includegraphics[width = 6cm]{q3img2.png}}
+\raisebox{\baselineskip-\height}{\includegraphics[width = 6cm]{images/q3img2.png}}
 \begin{tabular}[h]{lc}
 $\square$ & High pass \\
 $\square$ & Low pass \\
@@ -345,7 +345,7 @@ plt.show()
 
 
 \item
-    Do the results match your expectation given the number of multiply and add operations in convolution?
+    Do the results match your expectation given the number of multiply and add operations in convolution? (3-5 sentences)
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -363,7 +363,7 @@ plt.show()
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak 
-\paragraph{Q5:} The coding portion of this homework requires the use of the library \emph{numpy}, which provides fast computation with large multi-dimensional arrays and matrices. Here are some small exercises on basic numpy operations to get you started! Write \emph{one} numpy function to complete each of the following tasks.
+\paragraph{Q5:} The coding portion of this project requires the use of the library \emph{numpy}, which provides fast computation with large multi-dimensional arrays and matrices. Here are some small exercises on basic numpy operations to get you started! Write \emph{one} numpy function to complete each of the following tasks.
 
 Note that numpy is usually imported as
 \begin{verbatim}
