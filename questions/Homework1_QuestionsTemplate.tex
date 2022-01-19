@@ -67,7 +67,7 @@
 \fancyhf{}
 \lhead{Homework 1 Questions}
 \rhead{CSCI 1430}
-\lfoot{\textcolor{red}{Only 
+\lfoot{\textcolor{red}{Only
 \ifcase\thepage
 \or instructions
 \or A1 results
@@ -130,13 +130,13 @@ should be on this page
 % Uncomment the stencil below and fill in your solution.
 
 % \begin{enumerate}[(a)]
-% \item 
+% \item
 % \begin{enumerate}[(i)]
-%     \item 
-%     \item 
-%     \item 
+%     \item
+%     \item
+%     \item
 % \end{enumerate}
-% \item 
+% \item
 % \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -145,14 +145,14 @@ should be on this page
 \pagebreak
 \paragraph{Q2:} Correlation and convolution are both filtering operations we can perform to extract information from images.
 \begin{enumerate}[(a)]
-    \item 
+    \item
     What is the difference between convolution and correlation? (3-5 sentences)
 
     \item
     Construct a scenario which produces a different output between both operations. Include the kernel you used and your image results. Use your understanding of convolution and correlation to explain the outputs. (5-10 sentences)
-    
+
     \emph{Please use \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.convolve.html}{$scipy.ndimage.convolve$} and \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.correlate.html}{$scipy.ndimage.correlate$} to experiment!}
-    
+
 \end{enumerate}
 
 
@@ -162,9 +162,9 @@ should be on this page
 
 % \begin{enumerate}[(a)]
 
-% \item 
+% \item
 
-% \item 
+% \item
 
 % \end{enumerate}
 
@@ -251,20 +251,20 @@ $\square$ & In a high pass filter, the center of the kernel must have the highes
 
 % Please leave the pagebreak
 \pagebreak
-\paragraph{Q4:} 
+\paragraph{Q4:}
 \begin{enumerate}[(a)]
-    \item 
-    How does computation time vary with filter sizes from $3\times3$ to $15\times15$ (test odd and square sizes, i.e. $3\times3$, $5\times5$, $7\times7$, etc.), and with image sizes from approximately 0.25 to 8 megapixels? To find out fill out the below stencil to graph, for each of the above filter sizes, the correlation between an image size (x-axis) and time to convolve/correlate (y-axis) that image– each filter size should be its own line in the multi-line plot. 
-    
+    \item
+    How does computation time vary with filter sizes from $3\times3$ to $15\times15$ (test odd and square sizes, i.e. $3\times3$, $5\times5$, $7\times7$, etc.), and with image sizes from approximately 0.25 to 8 megapixels? To find out fill out the below stencil to graph, for each of the above filter sizes, the correlation between an image size (x-axis) and time to convolve/correlate (y-axis) that image– each filter size should be its own line in the multi-line plot.
+
     The stencil code imports the libraries you will need, but to understand how to use them you must look at the documentation.
     \begin{itemize}
     \item convolve/correlate - \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.convolve.html}{$scipy.ndimage.convolve$} or \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.correlate.html}{$scipy.ndimage.correlate$}
     \item rescale - \href{https://scikit-image.org/docs/dev/api/skimage.transform.html#skimage.transform.rescale}{$skimage.transform.rescale$}
     \item resize - \href{https://scikit-image.org/docs/dev/api/skimage.transform.html#skimage.transform.resize}{$skimage.transform.resize$}
     \item rescale vs resize – an example \href{http://scikit-image.org/docs/dev/auto_examples/transform/plot_rescale.html}{here}
-    \end{itemize} 
+    \end{itemize}
 
-    
+
     Add your graph as well as a brief description of what your graph demonstrates, below.
 
 \emph{Note A megapixel is 1,048,576 ($2^{20}$) pixels (1024$\times$1024), or sometimes also 1,000,000 pixels (especially if you manufacture cameras). Megapixels is often shortened to MP or MPix.}
@@ -272,7 +272,7 @@ $\square$ & In a high pass filter, the center of the kernel must have the highes
 \emph{Image:} \href{RISDance.jpg}{RISDance.jpg} (in the .tex directory).
 
 \begin{python}
-import time 
+import time
 import matplotlib.pyplot as plt
 from skimage import io, img_as_float32
 #use to rescale+resize image
@@ -281,57 +281,60 @@ from skimage.transform import rescale, resize
 from scipy.ndimage import correlate
 
 #This reads in image and converts to a floating point format
-# 1) TODO - replace PATH with the actual path to the 
+# 1) TODO - replace PATH with the actual path to the
 #    downloaded RISDance.jpg image linked above
 image = img_as_float32(io.imread('PATH'))
 
-# 2) TODO - change the image size so it starts at 8MPix 
+# 2) TODO - change the image size so it starts
+#    at 8MPix (calculated as height x width)
 #    use one of the imported libraries
-original_image = 
+original_image =
 
 # 3) TODO - iterate through odd numbers from 3 to 15
 #   (inclusive!!) these will represent your filter sizes
 #   (3x3,5x5,7x7, etc.), for each filter size you will...
 for kernel_size in range():
 
-    #because for each loop you are resizing your image, you 
+    #because for each loop you are resizing your image, you
     #want to start each loop w/the original image size
-    shrinking_image = original_image 
-    
+    shrinking_image = original_image
+
     #these lists will hold the values you plot
     image_sizes = [] #x axis
     times = [] #y axis
 
     #while image size is bigger than .25MPx
     while(shrinking_image.size > 250000):
-    
+
     	# 4) TODO - create your kernel. Your kernel can hold
-    	#    any values, as the kernel values shouldn't 
-    	#    affect computation time. The size of the kernel
+    	#    any values, as the kernel values shouldn't
+    	#    affect computation time. Avoid using np.zeros to
+    	#    create your kernal, as this messes up the intended
+    	#    output graph. The size of the kernel
     	#    must be kernel_size x kernel_size
-        kernel = 
-        
-        #5) TODO - reduce your image size. You can choose by 
+        kernel =
+
+        #5) TODO - reduce your image size. You can choose by
         # what increments to reduce your image.
-        shrinking_image = 
-        
+        shrinking_image =
+
         #gets the current time (in seconds)
-        start = time.time() 
-        
-        # 6) TODO - use one of the imported libraries to do 
-        # your correlation/convolution on the image. You can 
+        start = time.time()
+
+        # 6) TODO - use one of the imported libraries to do
+        # your correlation/convolution on the image. You can
         # choose which operation to perform.
-        
-        
+
+
         #gets the current time (in seconds)
-        end = time.time() 
-        
-        #7) TODO - figure out what values to append, and 
+        end = time.time()
+
+        #7) TODO - figure out what values to append, and
         #   append them here
         image_sizes.append()
         times.append()
-    
-    #each filter size will be plotted as a separate line, in 
+
+    #each filter size will be plotted as a separate line, in
     #a multi-line 2-dimensional graph
     plt.plot(image_sizes, times, label=str(kernel.size))
 
@@ -362,7 +365,7 @@ plt.show()
 % \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagebreak 
+\pagebreak
 \paragraph{Q5:} The coding portion of this homework requires the use of the library \emph{numpy}, which provides fast computation with large multi-dimensional arrays and matrices. Here are some small exercises on basic numpy operations to get you started! Write \emph{one} numpy function to complete each of the following tasks.
 
 Note that numpy is usually imported as
@@ -376,12 +379,12 @@ You are encouraged to test out your answers by creating your own python program,
 
 \begin{enumerate}[a.]
     \item Create an array of shape (320,640) filled with zeros.
-    \item Given a variable called \emph{img} of shape (1, 1, 320, 640), create a new 2D array variable of shape (320, 640) from \emph{img}, i.e. remove all the 1-sized dimensions. 
-    \item Conversely, say you have an array variable \emph{img} of shape (320, 640), create a new 2D array variable of shape (1, 320, 640) from \emph{img}, i.e. add a dimension. 
+    \item Given a variable called \emph{img} of shape (1, 1, 320, 640), create a new 2D array variable of shape (320, 640) from \emph{img}, i.e. remove all the 1-sized dimensions.
+    \item Conversely, say you have an array variable \emph{img} of shape (320, 640), create a new 2D array variable of shape (1, 320, 640) from \emph{img}, i.e. add a dimension.
     \item Clip the image array, \emph{img}, so all its values lie within the range [-0.5, 0.5].
-    \item With an RGB-image array, \emph{img}, of shape (320, 640, 3), retrieve the blue channel of the image while preserving all of \emph{img}'s dimensions and values. 
-    \item With an RGB-image array, \emph{img}, of shape (320, 640, 3), retrieve the red and blue channels of the image. 
-    \item Pad an \textbf{RGB} (remember, this means the image has 3 channels) image array, \emph{img}, with two zeros on either side of each row and 3 zeros values on either side of each column. Don't add zeros to the front or back (the color channel dimension).
+    \item With an RGB-image array, \emph{img}, of shape (320, 640, 3), retrieve the blue channel of the image while preserving all of \emph{img}'s dimensions and values.
+    \item With an RGB-image array, \emph{img}, of shape (320, 640, 3), retrieve the red and blue channels of the image.
+    \item Pad an \textbf{RGB} (remember, this means the image has 3 channels) image array, \emph{img}, with two zeros on either side of each row (the left and rigth edges of the image) and 3 zeros values on either side of each column (the tops and bottom edges of the image). Don't add zeros to the front or back (the color channel dimension).
 \end{enumerate}
 
 
@@ -391,20 +394,20 @@ You are encouraged to test out your answers by creating your own python program,
 %  Uncomment the stencil below and fill in your solution.
 
 % \begin{enumerate}[(a)]
-% \item 
-% \item 
-% \item 
-% \item 
-% \item 
-% \item 
-% \item 
+% \item
+% \item
+% \item
+% \item
+% \item
+% \item
+% \item
 % \end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Please leave the pagebreak
 \pagebreak
-\paragraph{Q6:} 
+\paragraph{Q6:}
 Goal: Understand consequences of image manipulation and ways to mitigate them
 
 In 1990, \emph{New York Times} photography critic Andy Grundberg \href{https://www.nytimes.com/1990/08/12/arts/photography-view-ask-it-no-questions-the-camera-can-lie.html}{stated that:}\\``In the future, readers of newspapers and
@@ -413,17 +416,17 @@ illustrations than as reportage, since they can no longer distinguish between a 
 
 \begin{enumerate}[(a)]
     \item When is Grundberg's `future'? Why? (2--4 sentences)
-    
+
     \item When is a news picture no longer genuine? Are any manipulations permissible, and if so, which ones? (2--4 sentences)
-    
-    \item Who benefits from image manipulation in the news? Who is negatively affected? How? (2--3 sentences) 
+
+    \item Who benefits from image manipulation in the news? Who is negatively affected? How? (2--3 sentences)
 
     \item If you worked for the \emph{New York Times} and were tasked with maintaining readers' trust in news pictures in Grundberg's future, what would you do? Consider everything that happens in the publication of a news picture. Describe your approach, and why it would work. (3--5 sentences)
-    
+
     \item Include an cited example of a manipulated news picture, and identify the manipulation. What was the intent and impact of the manipulation? (2--4 sentences)
 \end{enumerate}
 
-\emph{Note:} These are open questions. We will grade for thoughtfulness and justification. 
+\emph{Note:} These are open questions. We will grade for thoughtfulness and justification.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -431,20 +434,20 @@ illustrations than as reportage, since they can no longer distinguish between a 
 %  Uncomment the stencil below and fill in your solution.
 % \begin{enumerate}[(a)]
 % \item
-% \item 
-% \item 
+% \item
+% \item
 % \begin{enumerate}[(i)]
 %     \item
 % \end{enumerate}
 % \item
 % \end{enumerate}
 
-\pagebreak 
+\pagebreak
 \paragraph{A6:} Extra page.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% any suggestions for more? 
+%% any suggestions for more?
 \pagebreak
 \section*{Feedback? (Optional)}
 Please help us make the course better. If you have any feedback for this assignment, we'd love to hear it!
