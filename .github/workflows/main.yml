@@ -19,7 +19,7 @@ jobs:
   build:
     # Only compiles PDFs for updates in the main template repository (not student repositories)
     if: >-
-      github.event.repository.html_url == 'https://github.com/BrownCSCI1430/Homework1_HybridImages_Template'
+      github.event.repository.html_url == 'https://github.com/BrownCSCI1430/Homework1_ImageFiltering_Template'
     runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -28,13 +28,13 @@ jobs:
       - name: LaTeX compilation
         uses: dante-ev/latex-action@2021-A
         with:
-          root_file: Homework1_QuestionsTemplate.tex
+          root_file: Homework1_Questions_Template.tex
           working_directory: questions # optional
           compiler: latexmk # optional, default is latexmk
           args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode # optional, default is -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
       - name: Commit and Push PDF
         run: |
-          git add Homework1_QuestionsTemplate.pdf
+          git add questions/Homework1_Questions_Template.pdf
           git config --local user.name 'github-actions-bot'
           git config --local user.email 'cs1430-github-actions[bot]@users.noreply.github.com'
           git commit -m "Compile written PDF"
