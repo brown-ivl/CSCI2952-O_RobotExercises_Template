@@ -28,13 +28,13 @@ jobs:
       - name: LaTeX compilation
         uses: dante-ev/latex-action@2021-A
         with:
-          root_file: Homework1_Template.tex
+          root_file: Homework1_QuestionsTemplate.tex
           working_directory: questions # optional
           compiler: latexmk # optional, default is latexmk
           args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode # optional, default is -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
       - name: Commit and Push PDF
         run: |
-          git add Homework1_Template.pdf
+          git add Homework1_QuestionsTemplate.pdf
           git config --local user.name 'github-actions-bot'
           git config --local user.email 'cs1430-github-actions[bot]@users.noreply.github.com'
           git commit -m "Compile written PDF"
