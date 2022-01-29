@@ -65,22 +65,22 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{Homework 1 Questions}
+\lhead{Homework 1 Written Questions}
 \rhead{CSCI 1430}
 \lfoot{\textcolor{red}{Only
 \ifcase\thepage
 \or instructions
 \or A1
 \or A2
-\or Q1
-\or A1
-\or A2
+\or Q3
 \or A3
+\or A4
+\or A5
 \or instructions
 \or instructions
-\or A4 
+\or A6 
 \or instructions
-\or A5 
+\or A7 
 \or feedback
 \else
 EXTRA PAGE ADDED
@@ -111,7 +111,7 @@ should be on this page
   \item \textbf{We do NOT expect you to fill up each page with your answer.} Some answers will only be a few sentences long, and that is okay.
 \end{itemize}
 \pagebreak
-\section*{Ethical Implications}
+
 \paragraph{Q1:} Hybrid images appear as normal images until the viewer changes distance; they blur the line between authentic and inauthentic. As technology advances, evaluating authenticity becomes increasingly difficult. In 1990, \emph{New York Times} photography critic Andy Grundberg \href{https://www.nytimes.com/1990/08/12/arts/photography-view-ask-it-no-questions-the-camera-can-lie.html}{stated that:} "In the future, readers of newspapers and magazines will probably view news pictures more as illustrations than as reportage, since they can no longer distinguish between a genuine image and one that has been manipulated.''
 
 Do you think we've reached this point and why? What manipulations do you think are permissible for an image to be genuine, if any? Based on this, please list at least three potential solutions (scientific, journalistic, legal, etc.) to address mistrust in photographic media. [6-7 sentences]
@@ -124,9 +124,8 @@ Please list at least three potential consequences if your project is misused. Wh
 
 \paragraph{A2:} Your answer here.
 \pagebreak
-\section*{Technical Questions}
 
-\paragraph{Q1:} Image convolution, a type of image filtering, is a fundamental image processing tool that you will use repeatedly throughout the course.
+\paragraph{Q3:} Image convolution, a type of image filtering, is a fundamental image processing tool that you will use repeatedly throughout the course.
 
 \begin{enumerate}[(a)]
 \item \emph{Explicitly describe} the 3 main components of image convolution: (5-10 sentences)
@@ -141,7 +140,7 @@ Please list at least three potential consequences if your project is misused. Wh
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
-\paragraph{A1:} Your answer here.
+\paragraph{A3:} Your answer here.
 % Uncomment the stencil below and fill in your solution.
 
 % \begin{enumerate}[(a)]
@@ -158,7 +157,7 @@ Please list at least three potential consequences if your project is misused. Wh
 
 % Please leave the pagebreak
 \pagebreak
-\paragraph{Q2:} Correlation and convolution are both filtering operations we can perform to extract information from images.
+\paragraph{Q4:} Correlation and convolution are both filtering operations we can perform to extract information from images.
 \begin{enumerate}[(a)]
     \item
     What is the difference between convolution and correlation? (3-5 sentences)
@@ -172,7 +171,7 @@ Please list at least three potential consequences if your project is misused. Wh
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{A2:} Your answer here.
+\paragraph{A4:} Your answer here.
 % Uncomment the stencil below and fill in your solution.
 
 % \begin{enumerate}[(a)]
@@ -187,7 +186,7 @@ Please list at least three potential consequences if your project is misused. Wh
 
 % Please leave the page break
 \pagebreak
-\paragraph{Q3:} Please review the 'Thinking in Frequency Part 1' lecture slides on aliasing, and think about how we might anti-alias with a low-pass filter. Related high-pass filters also exist. For (a--c), which kind of filter does the kernel represent? For (d--e), which filter produced the output images?
+\paragraph{Q5:} Please review the lecture slides on sampling and aliasing, and think about how we might anti-alias with a low-pass filter. Related high-pass filters also exist. For (a--c), which kind of filter does the kernel represent? For (d--e), which filter produced the output images?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -266,7 +265,7 @@ $\square$ & In a high pass filter, the center of the kernel must have the highes
 
 % Please leave the pagebreak
 \pagebreak
-\paragraph{Q4:}
+\paragraph{Q6:}
 \begin{enumerate}[(a)]
     \item
     How does computation time vary with filter sizes from $3\times3$ to $15\times15$ (test odd and square sizes, i.e. $3\times3$, $5\times5$, $7\times7$, etc.), and with image sizes from approximately 0.25 to 8 megapixels? To find out fill out the below stencil to graph, for each of the above filter sizes, the correlation between an image size (x-axis) and time to convolve/correlate (y-axis) that image– each filter size should be its own line in the multi-line plot.
@@ -368,7 +367,7 @@ plt.show()
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
-\paragraph{A4:} Your graph and answer here.
+\paragraph{A6:} Your graph and answer here.
 % Uncomment the stencil below and fill in your solution.
 
 % \begin{enumerate}[(a)]
@@ -381,7 +380,7 @@ plt.show()
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
-\paragraph{Q5:} The coding portion of this homework requires the use of the library \emph{numpy}, which provides fast computation with large multi-dimensional arrays and matrices. Here are some small exercises on basic numpy operations to get you started! Write \emph{one} numpy function to complete each of the following tasks.
+\paragraph{Q7:} The coding portion of this homework requires the use of the library \emph{numpy}, which provides fast computation with large multi-dimensional arrays and matrices. Here are some small exercises on basic numpy operations to get you started! Write \emph{one} numpy function to complete each of the following tasks.
 
 Note that numpy is usually imported as
 \begin{verbatim}
@@ -405,7 +404,7 @@ You are encouraged to test out your answers by creating your own python program,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
-\paragraph{A5:} Your answer here. Remember, write \emph{one} numpy function to complete each of the tasks---this includes operators like [] and :.
+\paragraph{A7:} Your answer here. Remember, write \emph{one} numpy function to complete each of the tasks---this includes operators like [] and :.
 %  Uncomment the stencil below and fill in your solution.
 
 % \begin{enumerate}[(a)]
