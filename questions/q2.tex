@@ -1,0 +1,181 @@
+%%%%%% DON'T MODIFY STARTING HERE
+\newpage
+\section*{2. Python API}
+
+For this section, you may reference the template code or the \href{https://document.wlkata.com/?doc=/wlkata-mirobot-resources-for-education/python-sdk/}{documentation}. This \href{https://docs.google.com/document/d/1Jh17WoaQvjzbp1AMjOTzPfXSAxNnE87V8AEH1H-iLk8/edit?usp=sharing}{handbook} may also be useful for additional information.
+For all subsequent exercises, we will create a Python virtual environment using \href{https://www.anaconda.com/products/individual}{Anaconda}.
+Please install Anaconda as instructed in the above link, then create a new environment:
+%
+\begin{verbatim}
+    conda create -n 52-O python=3.8
+\end{verbatim}
+
+Then activate this virtual environment. You must do this for all subsequent exercises even if not instructed.
+\begin{verbatim}
+    conda activate 52-O
+\end{verbatim}
+
+\paragraph{2A.} Install Python SDK: \texttt{pip install wlkata-mirobot-python}. Attach at screenshot that shows successful completion in the space provided.
+
+\paragraph{2B.} Create robot arm object and home.
+Attach a screenshot of successful command execution.
+\begin{enumerate} %[(i)]
+    \item \texttt{arm = WlkataMirobot(portname=``your port name")}
+    \item \texttt{arm.home()}
+\end{enumerate}
+
+\paragraph{2C.} Replicate \textbf{1E} and \textbf{1F} using the Python API.
+Consult the documentation to figure out the values for \texttt{joint\_angles}, \texttt{x, y, z}, etc.
+Submit photo result and include your code in the space provided.
+\begin{itemize}
+    \item \texttt{def set\_joint\_angle(self, joint\_angles, is\_relative=False, speed=None, wait\_ok=None)}
+    \item \texttt{def set\_tool\_pose(self, x=None, y=None, z=None, roll=0.0, pitch=0.0, yaw=0.0,  mode='p2p', speed=None, is\_relative=False, wait\_ok=True)}
+\end{itemize}
+
+
+
+\paragraph{2D} Utilize the below 4 interpolation functions to make the robot go from \texttt{TARGET A} to \texttt{TARGET B} on the mat.
+Submit photo result of the arm in \textbf{both} targets in the space provided.
+Please also include your code where appropriate.
+% TODO
+\begin{itemize}
+    \item Point2Point: \texttt{def p2p\_interpolation(self, x=None, y=None, z=None, a=None, b=None, c=None, speed=None, is\_relative=False, wait\_ok=None)}
+    \item Linear: \texttt{def linear\_interpolation(self, x=None, y=None, z=None, a=None, b=None, c=None, speed=None, is\_relative=False, wait\_ok=None)}
+    \item Door: \texttt{def door\_interpolation(self, x=None, y=None, z=None, a=None, b=None, c=None, speed=None, is\_relative=False, wait\_ok=None)}
+    \item Circular: \texttt{def circular\_interpolation(self, ex, ey, radius, is\_cw=True, speed=None, wait\_ok=None)}
+\end{itemize}
+%%%%%% DON'T MODIFY UNTIL HERE
+
+\paragraph{Answers.}
+Please do not exceed the height provided for each answer image.
+%%%%%% YOU ANSWER STARTS HERE
+
+% NOTE: MAKE SURE YOU DON'T CHANGE THE HEIGHT OF IMAGES
+% NOTE: MAKE SURE TO REMOVE THE 'draft' OPTION FOR includegraphics BELOW. OTHERWISE, YOU WILL NOT SEE YOUR IMAGES.
+
+\paragraph{2A. Install Python SDK}
+\begin{center}
+    \includegraphics[draft,height=2.5in]{YOUR\_ANSWER.png}
+\end{center}
+
+\paragraph{2B. Create Python Object and Home}
+\begin{center}
+    \includegraphics[draft,height=2.5in]{YOUR\_ANSWER.png}
+\end{center}
+
+\newpage
+\paragraph{2C. IK / FK using Python}
+Include your code also.
+
+\begin{figure}[hb!]
+     \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[draft,height=2.5in]{YOUR\_ANSWER.png}
+         \caption*{Inverse Kinematics to \texttt{TARGET A}}
+     \end{subfigure}
+     %
+     \hfill
+     %
+     \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[draft,height=2.5in]{YOUR\_ANSWER.png}
+         \caption*{Forward Kinematics to \texttt{TARGET A}}
+     \end{subfigure}
+    \caption*{Answer for 2C.}
+\end{figure}
+
+\begin{minted}{python}
+    var = 'YOU CODE GOES HERE'
+\end{minted}
+
+\newpage
+\paragraph{2D. Interpolation}
+Include your code also.
+
+\begin{figure}[hb!]
+     \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[draft,height=2.5in]{YOUR\_ANSWER.png}
+         \caption*{Point2Point: \texttt{TARGET A}}
+     \end{subfigure}
+     %
+     \hfill
+     %
+     \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[draft,height=2.5in]{YOUR\_ANSWER.png}
+         \caption*{Point2Point: \texttt{TARGET B}}
+     \end{subfigure}
+    \caption*{Answer for 2C.}
+\end{figure}
+%
+\begin{minted}{python}
+    var = 'YOU CODE GOES HERE'
+\end{minted}
+
+\newpage
+\begin{figure}[hb!]
+     \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[draft,height=2.5in]{YOUR\_ANSWER.png}
+         \caption*{Linear: \texttt{TARGET A}}
+     \end{subfigure}
+     %
+     \hfill
+     %
+     \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[draft,height=2.5in]{YOUR\_ANSWER.png}
+         \caption*{Linear: \texttt{TARGET B}}
+     \end{subfigure}
+    \caption*{Answer for 2C.}
+\end{figure}
+%
+\begin{minted}{python}
+    var = 'YOU CODE GOES HERE'
+\end{minted}
+
+\newpage
+\begin{figure}[hb!]
+     \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[draft,height=2.5in]{YOUR\_ANSWER.png}
+         \caption*{Door: \texttt{TARGET A}}
+     \end{subfigure}
+     %
+     \hfill
+     %
+     \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[draft,height=2.5in]{YOUR\_ANSWER.png}
+         \caption*{Door: \texttt{TARGET B}}
+     \end{subfigure}
+    \caption*{Answer for 2C.}
+\end{figure}
+%
+\begin{minted}{python}
+    var = 'YOU CODE GOES HERE'
+\end{minted}
+
+\newpage
+\begin{figure}[hb!]
+     \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[draft,height=2.5in]{YOUR\_ANSWER.png}
+         \caption*{Circular: \texttt{TARGET A}}
+     \end{subfigure}
+     %
+     \hfill
+     %
+     \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[draft,height=2.5in]{YOUR\_ANSWER.png}
+         \caption*{Circular: \texttt{TARGET B}}
+     \end{subfigure}
+    \caption*{Answer for 2C.}
+\end{figure}
+%
+\begin{minted}{python}
+    var = 'YOU CODE GOES HERE'
+\end{minted}
+
+\newpage
+
+\paragraph{Additional Space.}
+Please do not exceed this page for this question.
+%%%%%% YOU ANSWER ENDS HERE
